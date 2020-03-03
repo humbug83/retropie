@@ -9,23 +9,30 @@ The build-in "usb-mount"-function of retropie is nice, but it only copies all ro
 - usb-drive (size doesn't matter, just enought to store all your games, themes, splashscreens, BIOS, ... ). I'm using a 64Gb NTFS-formatted drive.
 - for ntfs-support, install: `sudo apt-get install ntfs-3g`
 - specific folder-structure on the drive:
-    - **USB_DRIVE/retropie_pi/**
-      - home
-        - BIOS
-        - retropiemenu 
-        - roms
-        - splashscreens
-      - themes
+```
+. (usb-drive)
+│
+└── retro_pi                        # most important folder
+    │ 
+    ├── home                        # replaces the "RetroPi"-folder under /home/pi/
+    │    │ 
+    │    ├── BIOS                   # contains BIOS-files
+    │    ├── roms                   # contains all roms (and scraped inforamtions/images if selected)
+    │    ├── splashscreens          # small videos played on boot
+    │    └── retropiemenu           # various files
+    │ 
+    └── themes                      # themes for emulatonstation frontend
+```
 
 # Installation
 
 to prevent empty folders after creating the links, a few steps are required\
 (location "/media/usb/" can vary so please check on which path your usb-drive will be mounted from the system)
-- plug in an usb-drive
-- mkdir -p /media/usb/retro_pi/home
-- mkdir -p /media/usb/retro_pi/themes
-- sudo cp -R /home/pi/RetroPie/\* /media/usb/retro_pi/home
-- sudo cp -R /etc/emulationstation/themes/\* /media/usb/retro_pi/themes
+- plug in the usb-drive
+- `mkdir -p /media/usb/retro_pi/home`
+- `mkdir -p /media/usb/retro_pi/themes`
+- `sudo cp -R /home/pi/RetroPie/\* /media/usb/retro_pi/home`
+- `sudo cp -R /etc/emulationstation/themes/\* /media/usb/retro_pi/themes`
     
 then proceed with
 - download script
