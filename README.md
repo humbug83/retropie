@@ -31,8 +31,8 @@ to prevent empty folders after creating the links, a few steps are required\
 - plug in the usb-drive
 - `mkdir -p /media/usb/retro_pi/retro_home`
 - `mkdir -p /media/usb/retro_pi/themes`
-- `sudo cp -R /home/pi/RetroPie/\* /media/usb/retro_pi/retro_home`
-- `sudo cp -R /etc/emulationstation/themes/\* /media/usb/retro_pi/themes`
+- `sudo cp -R /home/pi/RetroPie/* /media/usb/retro_pi/retro_home`
+- `sudo cp -R /etc/emulationstation/themes/* /media/usb/retro_pi/themes`
     
 then proceed with
 - download script
