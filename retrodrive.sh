@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set variables
-USB_PATH=/media/usb/retro_pi
+USB_PATH=$(find /media/usb* -name retro_pi)
 USB_HOME=${USB_PATH}/home
 USB_THEMES=${USB_PATH}/themes
 
