@@ -32,15 +32,15 @@ to prevent empty folders after creating the links, a few steps are required\
 How to check if the mounted drive is correct
 - create a file in the rootdirectory of the drive called "test" (or whatever)
 - plug in the usb-drive
-- run `ls $(mount | grep sd | awk '{print $3}')`
+- run `ls $(mount | grep media | awk '{print $3}')`
 - if the file is there, all is fine
 - if not, check if the drive was mounted correctly (maybe a restart can help)
 
 Then create the correct file-structure:
 - plug in the usb-drive
-- `mkdir -p $(mount | grep sd | awk '{print $3}')/retro_pi/retro_home`
-- `sudo cp -R /home/pi/RetroPie/* $(mount | grep sd | awk '{print $3}')/retro_pi/retro_home`
-- `sudo cp -R /etc/emulationstation/themes $(mount | grep sd | awk '{print $3}')/retro_pi/`
+- `mkdir -p $(mount | grep media | awk '{print $3}')/retro_pi/retro_home`
+- `sudo cp -R /home/pi/RetroPie/* $(mount | grep media | awk '{print $3}')/retro_pi/retro_home`
+- `sudo cp -R /etc/emulationstation/themes $(mount | grep media | awk '{print $3}')/retro_pi/`
     
 then proceed with
 - download script
