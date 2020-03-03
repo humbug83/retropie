@@ -33,6 +33,7 @@ to prevent empty folders after creating the links, a few steps are required\
 - `mkdir -p /media/usb/retro_pi/themes`
 - `sudo cp -R /home/pi/RetroPie/\* /media/usb/retro_pi/home`
 - `sudo cp -R /etc/emulationstation/themes/\* /media/usb/retro_pi/themes`
+- edit retrodrive.sh and edit USB_PATH according to your local mounted folder
     
 then proceed with
 - download script
