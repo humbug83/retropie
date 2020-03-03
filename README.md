@@ -8,20 +8,29 @@ The build-in "usb-mount"-function of retropie is nice, but it only copies all ro
 # Prerequisitions
 - usb-drive (size doesn't matter, just enought to store all your games, themes, splashscreens, BIOS, ... ). I'm using a 64Gb NTFS-formatted drive.
 - for ntfs-support, install: `sudo apt-get install ntfs-3g`
-- specific folder-structure on the drive:
+- specific folder-structure on the drive (maybe some folder/files will be created after first use of emulationstation, so check available files later again if they aren't present during first check):
 ```
 . (usb-drive)
 │
 └── retro_pi                        # most important folder
     │ 
-    ├── retro_home                  # replaces the "RetroPi"-folder under /home/pi/
-    │    │ 
+    ├── emulationstation
+    │    ├── es_input.cfg           # links /opt/retropie/configs/all/emulationstation/es_input.cfg
+    │    ├── es_settings.cfg        # links /opt/retropie/configs/all/emulationstation/es_settings.cfg
+    │    ├── es_systems.cfg         # links /opt/retropie/configs/all/emulationstation/es_systems.cfg
+    │    └── gamelists              # links /opt/retropie/configs/all/emulationstation/gamelists/*
+    │ 
+    ├── retro_home                  # links /home/pi/RetroPie
     │    ├── BIOS                   # contains BIOS-files
     │    ├── roms                   # contains all roms (and scraped inforamtions/images if selected)
     │    ├── splashscreens          # small videos played on boot
     │    └── retropiemenu           # various files
     │ 
-    └── themes                      # themes for emulatonstation frontend
+    ├── retroarch
+    │    ├── autoconfig             # links /opt/retropie/configs/all/retroarch/autoconfig
+    │    └── config                 # links /opt/retropie/configs/all/retroarch/config
+    │ 
+    └── themes                      # themes for emulationstation's frontend
 ```
 
 # Installation
@@ -45,6 +54,13 @@ Then create the correct file-structure:
 - `mkdir -p $(mount | grep media | awk '{print $3}')/retro_pi/retro_home`
 - `sudo cp -R /home/pi/RetroPie/* $(mount | grep media | awk '{print $3}')/retro_pi/retro_home`
 - `sudo cp -R /etc/emulationstation/themes $(mount | grep media | awk '{print $3}')/retro_pi/`
+
+- `sudo cp /opt/retropie/configs/all/emulationstation/es_input.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
+- `sudo cp /opt/retropie/configs/all/emulationstation/es_settings.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
+- `sudo cp /opt/retropie/configs/all/emulationstation/es_systems.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
+- `sudo cp -R /opt/retropie/configs/all/emulationstation/gamelists $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
+- `sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
+- `sudo cp -R /opt/retropie/configs/all/retroarch/config $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
     
 then proceed with
 - download script
