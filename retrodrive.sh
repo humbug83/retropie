@@ -2,7 +2,7 @@
 
 # set variables
 USB_PATH=$(find /media/usb* -name retro_pi)
-USB_HOME=${USB_PATH}/home
+USB_HOME=${USB_PATH}/retro_home
 USB_THEMES=${USB_PATH}/themes
 
 USB_LINK_NAME=usb
