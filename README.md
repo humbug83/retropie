@@ -26,8 +26,12 @@ The build-in "usb-mount"-function of retropie is nice, but it only copies all ro
 
 # Installation
 
-to prevent empty folders after creating the links, a few steps are required\
-(the location of the mounted drive can vary, so check first if the path given by `echo $(mount | grep sd | awk '{print $3}')` is the correct one, else replace the path in the next commands with the correct one)
+
+To prevent empty folders after creating the links, a few steps are required\
+(the location of the mounted drive can vary, so check first if the path given by\
+`echo $(mount | grep sd | awk '{print $3}')`\
+is the correct one, else replace the path in the next commands with the correct one)
+
 
 How to check if the mounted drive is correct
 - create a file in the rootdirectory of the drive called "test" (or whatever)
