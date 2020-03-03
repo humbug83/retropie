@@ -54,15 +54,16 @@ Then create the correct file-structure:
 - `mkdir -p $(mount | grep media | awk '{print $3}')/retro_pi/retro_home`
 - `sudo cp -R /home/pi/RetroPie/* $(mount | grep media | awk '{print $3}')/retro_pi/retro_home`
 - `sudo cp -R /etc/emulationstation/themes $(mount | grep media | awk '{print $3}')/retro_pi/`
-
 - `sudo cp /opt/retropie/configs/all/emulationstation/es_input.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
 - `sudo cp /opt/retropie/configs/all/emulationstation/es_settings.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
 - `sudo cp /opt/retropie/configs/all/emulationstation/es_systems.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
 - `sudo cp -R /opt/retropie/configs/all/emulationstation/gamelists $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
 - `sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
 - `sudo cp -R /opt/retropie/configs/all/retroarch/config $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
-    
-then proceed with
+
+### This steps are combined in the script `structure.sh`.
+
+Then proceed with
 - download script
 - run `sudo vi /etc/rc.local`
 - insert `"/path/to/retrodrive.sh" 2>&1 > /dev/null &` above the ".../rpmanager.sh"-line
