@@ -27,12 +27,20 @@ The build-in "usb-mount"-function of retropie is nice, but it only copies all ro
 # Installation
 
 to prevent empty folders after creating the links, a few steps are required\
-(location "/media/usb/" can vary so please check on which path your usb-drive will be mounted from the system)
+(the location of the mounted drive can vary, so check first if the path given by `echo $(mount | grep sd | awk '{print $3}')` is the correct one, else replace the path in the next commands with the correct one)
+
+How to check if the mounted drive is correct
+- create a file in the rootdirectory of the drive called "test" (or whatever)
 - plug in the usb-drive
-- `mkdir -p /media/usb/retro_pi/retro_home`
-- `mkdir -p /media/usb/retro_pi/themes`
-- `sudo cp -R /home/pi/RetroPie/* /media/usb/retro_pi/retro_home`
-- `sudo cp -R /etc/emulationstation/themes/* /media/usb/retro_pi/themes`
+- run `ls $(mount | grep sd | awk '{print $3}')`
+- if the file is there, all is fine
+- if not, check if the drive was mounted correctly (maybe a restart can help)
+
+Then create the correct file-structure:
+- plug in the usb-drive
+- `mkdir -p $(mount | grep sd | awk '{print $3}')/retro_pi/retro_home`
+- `sudo cp -R /home/pi/RetroPie/* $(mount | grep sd | awk '{print $3}')/retro_pi/retro_home`
+- `sudo cp -R /etc/emulationstation/themes $(mount | grep sd | awk '{print $3}')/retro_pi/`
     
 then proceed with
 - download script
