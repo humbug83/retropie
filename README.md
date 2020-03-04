@@ -72,8 +72,8 @@ Then proceed with
 # What it does
 
 - checks for specific folder on boot
-  - if "retro_home"-folder is present on the drive, the current "/home/pi/RetroPie"-folder on the internal drive will be renamed to **RetroPie_org** so no data gets lost
-  - if "thems"-folder is present on the drive, the current "/etc/emulationstation/themes"-folder on the internal drive will be renamed to **themes_org** so no data gets lost
+  - if `retro_home`-folder is present on the drive, the current "/home/pi/RetroPie"-folder on the internal drive will be renamed to **RetroPie_org** so no data gets lost
+  - if `themes`-folder is present on the drive, the current "/etc/emulationstation/themes"-folder on the internal drive will be renamed to **themes_org** so no data gets lost
 - if no drive is present (or the "retro_pi"-folder on the drive was renamed/removed), all created links will be removed and existing **"\*_org"**-folder(s) restored
 
 # To-Do
