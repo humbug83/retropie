@@ -52,15 +52,16 @@ If there are 2 or more drives connected, the output also shows more locations, s
 
 Then create the correct file-structure:
 ```bash
-mkdir -p $(mount | grep media | awk '{print $3}')/retro_pi/retro_home
-sudo cp -R /home/pi/RetroPie/* $(mount | grep media | awk '{print $3}')/retro_pi/retro_home
-sudo cp -R /etc/emulationstation/themes $(mount | grep media | awk '{print $3}')/retro_pi/
-sudo cp /opt/retropie/configs/all/emulationstation/es_input.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/
-sudo cp /opt/retropie/configs/all/emulationstation/es_settings.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/
-sudo cp /opt/retropie/configs/all/emulationstation/es_systems.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/
-sudo cp -R /opt/retropie/configs/all/emulationstation/gamelists $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/
-sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/
-sudo cp -R /opt/retropie/configs/all/retroarch/config $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/
+USB_DRIVE=$(mount | grep media | awk '{print $3}')
+mkdir -p ${USB_DRIVE}/retro_pi/retro_home
+sudo cp -R /home/pi/RetroPie/* ${USB_DRIVE}/retro_pi/retro_home
+sudo cp -R /etc/emulationstation/themes ${USB_DRIVE}/retro_pi/
+sudo cp /opt/retropie/configs/all/emulationstation/es_input.cfg ${USB_DRIVE}/retro_pi/emulationstation/
+sudo cp /opt/retropie/configs/all/emulationstation/es_settings.cfg ${USB_DRIVE}/retro_pi/emulationstation/
+sudo cp /opt/retropie/configs/all/emulationstation/es_systems.cfg ${USB_DRIVE}/retro_pi/emulationstation/
+sudo cp -R /opt/retropie/configs/all/emulationstation/gamelists ${USB_DRIVE}/retro_pi/emulationstation/
+sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig ${USB_DRIVE}/retro_pi/retroarch/
+sudo cp -R /opt/retropie/configs/all/retroarch/config ${USB_DRIVE}/retro_pi/retroarch/
 ```
 
 Then proceed with
