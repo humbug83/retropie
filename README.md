@@ -61,14 +61,14 @@ Then create the correct file-structure:
 - `sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
 - `sudo cp -R /opt/retropie/configs/all/retroarch/config $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
 
-# Script "structure.sh"
-This script combines all commands from above. The more files are already present (roms, scraped images, ...), the longer the copy process will take.
-
 Then proceed with
 - download script
 - run `sudo vi /etc/rc.local`
 - insert `"/path/to/retrodrive.sh" 2>&1 > /dev/null &` above the ".../rpmanager.sh"-line
 - save
+
+# Hint: the script "structure.sh"
+... combines all commands from above. The more files are already present on the internal drive (roms, scraped images, ...), the longer the copy process will take.
 
 # What it does
 
