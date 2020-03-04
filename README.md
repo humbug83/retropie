@@ -48,7 +48,7 @@ is the correct one, else replace the path in the next commands with the correct 
 
 How to check if the mounted drive is correct
 - create a file in the rootdirectory of the drive called "test" (or whatever)
-- plug in the usb-drive and check if it's connected properly:
+- plug in the usb-drive and check if it's connected properly:\
 `ls $(mount | grep media | awk '{print $3}')`
 - if the file is there, all is fine
 - if not, check if the drive was mounted correctly (maybe a restart can help)
