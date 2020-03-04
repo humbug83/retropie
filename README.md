@@ -40,18 +40,14 @@ I'm using a 64Gb NTFS-formatted drive. For ntfs-support, install the needed depe
 
 # Installation
 
-To prevent empty folders after creating the links, a few steps are required\
-(the location of the mounted drive can vary, so check first if the path given by\
-`echo $(mount | grep sd | awk '{print $3}')`\
-is the correct one, else replace the path in the next commands with the correct one)
+To prevent empty folders after creating the links, a few steps are required.
 
-
-How to check if the mounted drive is correct
+Check if the drive was mounted correctly:
 - create a file in the rootdirectory of the drive called "test" (or whatever)
-- plug in the usb-drive and check if it's connected properly:\
+- plug in the usb-drive and run\
 `ls $(mount | grep media | awk '{print $3}')`
-- if the file is there, all is fine
-- if not, check if the drive was mounted correctly (maybe a restart can help)
+- if the file is there (in any of the listed usb*-directories), all is fine
+- if not, check if the drive is ok or restart the system. If it's a ntfs-drive, be sure you have installed `ntfs-3g`.
 
 Then create the correct file-structure:
 - plug in the usb-drive
