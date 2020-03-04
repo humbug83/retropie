@@ -48,7 +48,7 @@ I'm using a 64Gb NTFS-formatted drive. For ntfs-support, install the needed depe
 - if the file is there (in any of the listed usb*-directories), all is fine
 - if not, check if the drive is ok or restart the system. If it's a ntfs-drive, be sure you have installed `ntfs-3g`.
 
-> :warning:
+> :warning:\
 If there are 2 or more drives connected, the output also shows more locations, so either you disconnect all other drives except the one you want to use to store the files or you change following part in the next commands regarding your needs:
 change `$(mount | grep media | awk '{print $3}')` to e.g `/media/usb0`
 
