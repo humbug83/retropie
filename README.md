@@ -1,6 +1,8 @@
 # RetroPie
 Personal scripts for e.g. mounting usb-drivers and their stored games  
 
+---
+
 # Script "retrodrive.sh"
 
 The build-in "usb-mount"-function of retropie is nice, but it only copies all roms and data from and onto the internal drive, so if you have a not enough space on the card left, you have to delete files and that`s not really cool. I decided to make a script which mounts the most important folders from the stick to their desired location on the internal disk, so you can run all your games directly from the usb drive. It renames the original folder to *%_org*, so they can always be reversed if no usb stick is connected...automatically.
@@ -33,6 +35,8 @@ I'm using a 64Gb NTFS-formatted drive. For ntfs-support, install the needed depe
     │ 
     └── themes                      # themes for emulationstation's frontend
 ```
+
+---
 
 # Installation
 
@@ -67,8 +71,10 @@ Then proceed with
 - insert `"/path/to/retrodrive.sh" 2>&1 > /dev/null &` above the ".../rpmanager.sh"-line
 - save
 
-# Hint: the script "structure.sh"
+# Script "structure.sh" (optional)
 ... combines all commands from above. The more files are already present on the internal drive (roms, scraped images, ...), the longer the copy process will take.
+
+---
 
 # What it does
 
@@ -77,6 +83,8 @@ Then proceed with
   - if `themes`-folder is present on the drive, the current "/etc/emulationstation/themes"-folder on the internal drive will be renamed to **themes_org** so no data gets lost
 - if no drive is present (or the `retro_pi`-folder on the drive was renamed/removed), all created links will be removed and existing **"\*_org"**-folder(s) restored
 - links specific folders containing `*.cfg`-files (joypad settings, es-settings, ...)
+
+---
 
 # To-Do
 
