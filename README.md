@@ -47,22 +47,21 @@ Check if the drive was mounted correctly:
 - if the file is there (in any of the listed usb*-directories), all is fine
 - if not, check if the drive is ok or restart the system. If it's a ntfs-drive, be sure you have installed `ntfs-3g`.
 
-If there are 2 or more drives connected, the output also shows more locations, so either you disconnect all other drives except the one you want to use to store the files or you change following part in the next commands regarding your needs:\
-- change `$(mount | grep media | awk '{print $3}')` to e.g `/media/usb0`
+> :warning:
+If there are 2 or more drives connected, the output also shows more locations, so either you disconnect all other drives except the one you want to use to store the files or you change following part in the next commands regarding your needs:
+change `$(mount | grep media | awk '{print $3}')` to e.g `/media/usb0`
 
-Then create the correct file-structure:
-```bash
-USB_DRIVE=$(mount | grep media | awk '{print $3}')
-mkdir -p ${USB_DRIVE}/retro_pi/retro_home
-sudo cp -R /home/pi/RetroPie/* ${USB_DRIVE}/retro_pi/retro_home
-sudo cp -R /etc/emulationstation/themes ${USB_DRIVE}/retro_pi/
-sudo cp /opt/retropie/configs/all/emulationstation/es_input.cfg ${USB_DRIVE}/retro_pi/emulationstation/
-sudo cp /opt/retropie/configs/all/emulationstation/es_settings.cfg ${USB_DRIVE}/retro_pi/emulationstation/
-sudo cp /opt/retropie/configs/all/emulationstation/es_systems.cfg ${USB_DRIVE}/retro_pi/emulationstation/
-sudo cp -R /opt/retropie/configs/all/emulationstation/gamelists ${USB_DRIVE}/retro_pi/emulationstation/
-sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig ${USB_DRIVE}/retro_pi/retroarch/
-sudo cp -R /opt/retropie/configs/all/retroarch/config ${USB_DRIVE}/retro_pi/retroarch/
-```
+Then create the correct file-structure:\
+`USB_DRIVE=$(mount | grep media | awk '{print $3}')`\
+`mkdir -p ${USB_DRIVE}/retro_pi/retro_home`\
+`sudo cp -R /home/pi/RetroPie/* ${USB_DRIVE}/retro_pi/retro_home`\
+`sudo cp -R /etc/emulationstation/themes ${USB_DRIVE}/retro_pi/`\
+`sudo cp /opt/retropie/configs/all/emulationstation/es_input.cfg ${USB_DRIVE}/retro_pi/emulationstation/`\
+`sudo cp /opt/retropie/configs/all/emulationstation/es_settings.cfg ${USB_DRIVE}/retro_pi/emulationstation/`\
+`sudo cp /opt/retropie/configs/all/emulationstation/es_systems.cfg ${USB_DRIVE}/retro_pi/emulationstation/`\
+`sudo cp -R /opt/retropie/configs/all/emulationstation/gamelists ${USB_DRIVE}/retro_pi/emulationstation/`\
+`sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig ${USB_DRIVE}/retro_pi/retroarch/`\
+`sudo cp -R /opt/retropie/configs/all/retroarch/config ${USB_DRIVE}/retro_pi/retroarch/`
 
 Then proceed with
 - download script
