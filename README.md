@@ -40,7 +40,7 @@ I'm using a 64Gb NTFS-formatted drive. For ntfs-support, install the needed depe
 
 # Installation
 
-1- Check if the drive was mounted correctly:
+#### 1. Check if the drive was mounted correctly
 
 - create a file in the rootdirectory of the drive called "test" (or whatever)
 - plug in the usb-drive and run\
@@ -52,20 +52,21 @@ I'm using a 64Gb NTFS-formatted drive. For ntfs-support, install the needed depe
 If there are 2 or more drives connected, the output also shows more locations, so either you disconnect all other drives except the one you want to use to store the files or you change following part in the next commands regarding your needs:
 change `$(mount | grep media | awk '{print $3}')` to e.g `/media/usb0`
 
-2. Create the correct file-structure:\
+#### 2. Create the correct file-structure
 
-- `USB_DRIVE=$(mount | grep media | awk '{print $3}')`\
-- `mkdir -p ${USB_DRIVE}/retro_pi/retro_home`\
-- `sudo cp -R /home/pi/RetroPie/* ${USB_DRIVE}/retro_pi/retro_home`\
-- `sudo cp -R /etc/emulationstation/themes ${USB_DRIVE}/retro_pi/`\
-- `sudo cp /opt/retropie/configs/all/emulationstation/es_input.cfg ${USB_DRIVE}/retro_pi/emulationstation/`\
-- `sudo cp /opt/retropie/configs/all/emulationstation/es_settings.cfg ${USB_DRIVE}/retro_pi/emulationstation/`\
-- `sudo cp /opt/retropie/configs/all/emulationstation/es_systems.cfg ${USB_DRIVE}/retro_pi/emulationstation/`\
-- `sudo cp -R /opt/retropie/configs/all/emulationstation/gamelists ${USB_DRIVE}/retro_pi/emulationstation/`\
-- `sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig ${USB_DRIVE}/retro_pi/retroarch/`\
+- `USB_DRIVE=$(mount | grep media | awk '{print $3}')`
+- `mkdir -p ${USB_DRIVE}/retro_pi/retro_home`
+- `sudo cp -R /home/pi/RetroPie/* ${USB_DRIVE}/retro_pi/retro_home`
+- `sudo cp -R /etc/emulationstation/themes ${USB_DRIVE}/retro_pi/`
+- `sudo cp /opt/retropie/configs/all/emulationstation/es_input.cfg ${USB_DRIVE}/retro_pi/emulationstation/`
+- `sudo cp /opt/retropie/configs/all/emulationstation/es_settings.cfg ${USB_DRIVE}/retro_pi/emulationstation/`
+- `sudo cp /opt/retropie/configs/all/emulationstation/es_systems.cfg ${USB_DRIVE}/retro_pi/emulationstation/`
+- `sudo cp -R /opt/retropie/configs/all/emulationstation/gamelists ${USB_DRIVE}/retro_pi/emulationstation/`
+- `sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig ${USB_DRIVE}/retro_pi/retroarch/`
 - `sudo cp -R /opt/retropie/configs/all/retroarch/config ${USB_DRIVE}/retro_pi/retroarch/`
 
-3. Implement script
+#### 3. Implement script
+
 - download script or clone repo
 - `sudo vi /etc/rc.local`
 - insert `"/path/to/retrodrive.sh" 2>&1 > /dev/null &` above the ".../rpmanager.sh"-line
