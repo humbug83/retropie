@@ -62,7 +62,7 @@ Then create the correct file-structure:
 - `sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
 - `sudo cp -R /opt/retropie/configs/all/retroarch/config $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
 
-### This steps are combined in the script `structure.sh`.
+### This steps are combined in `structure.sh`
 
 Then proceed with
 - download script
@@ -75,7 +75,7 @@ Then proceed with
 - checks for specific folder on boot
   - if `retro_home`-folder is present on the drive, the current "/home/pi/RetroPie"-folder on the internal drive will be renamed to **RetroPie_org** so no data gets lost
   - if `themes`-folder is present on the drive, the current "/etc/emulationstation/themes"-folder on the internal drive will be renamed to **themes_org** so no data gets lost
-- if no drive is present (or the "retro_pi"-folder on the drive was renamed/removed), all created links will be removed and existing **"\*_org"**-folder(s) restored
+- if no drive is present (or the `retro_pi`-folder on the drive was renamed/removed), all created links will be removed and existing **"\*_org"**-folder(s) restored
 - links specific folders containing `*.cfg`-files (joypad settings, es-settings, ...)
 
 # To-Do
