@@ -40,8 +40,6 @@ I'm using a 64Gb NTFS-formatted drive. For ntfs-support, install the needed depe
 
 # Installation
 
-To prevent empty folders after creating the links, a few steps are required.
-
 Check if the drive was mounted correctly:
 - create a file in the rootdirectory of the drive called "test" (or whatever)
 - plug in the usb-drive and run\
@@ -49,21 +47,25 @@ Check if the drive was mounted correctly:
 - if the file is there (in any of the listed usb*-directories), all is fine
 - if not, check if the drive is ok or restart the system. If it's a ntfs-drive, be sure you have installed `ntfs-3g`.
 
+If there are 2 or more drives connected, the output also shows more locations, so either you disconnect all other drives except the one you want to use to store the files or you change following part in the next commands regarding your needs:\
+- change `$(mount | grep media | awk '{print $3}')` to e.g `/media/usb0`
+
 Then create the correct file-structure:
-- plug in the usb-drive
-- `mkdir -p $(mount | grep media | awk '{print $3}')/retro_pi/retro_home`
-- `sudo cp -R /home/pi/RetroPie/* $(mount | grep media | awk '{print $3}')/retro_pi/retro_home`
-- `sudo cp -R /etc/emulationstation/themes $(mount | grep media | awk '{print $3}')/retro_pi/`
-- `sudo cp /opt/retropie/configs/all/emulationstation/es_input.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
-- `sudo cp /opt/retropie/configs/all/emulationstation/es_settings.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
-- `sudo cp /opt/retropie/configs/all/emulationstation/es_systems.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
-- `sudo cp -R /opt/retropie/configs/all/emulationstation/gamelists $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/`
-- `sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
-- `sudo cp -R /opt/retropie/configs/all/retroarch/config $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
+```bash
+mkdir -p $(mount | grep media | awk '{print $3}')/retro_pi/retro_home
+sudo cp -R /home/pi/RetroPie/* $(mount | grep media | awk '{print $3}')/retro_pi/retro_home
+sudo cp -R /etc/emulationstation/themes $(mount | grep media | awk '{print $3}')/retro_pi/
+sudo cp /opt/retropie/configs/all/emulationstation/es_input.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/
+sudo cp /opt/retropie/configs/all/emulationstation/es_settings.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/
+sudo cp /opt/retropie/configs/all/emulationstation/es_systems.cfg $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/
+sudo cp -R /opt/retropie/configs/all/emulationstation/gamelists $(mount | grep media | awk '{print $3}')/retro_pi/emulationstation/
+sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/
+sudo cp -R /opt/retropie/configs/all/retroarch/config $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/
+```
 
 Then proceed with
 - download script
-- run `sudo vi /etc/rc.local`
+- `sudo vi /etc/rc.local`
 - insert `"/path/to/retrodrive.sh" 2>&1 > /dev/null &` above the ".../rpmanager.sh"-line
 - save
 
