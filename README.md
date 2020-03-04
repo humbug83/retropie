@@ -1,7 +1,7 @@
-# retropie
-Scripts for better implementation of various functions.
+# RetroPie
+Personal scripts for e.g. mounting usb-drivers and their stored games  
 
-# "retrodrive.sh"
+# Script "retrodrive.sh"
 
 The build-in "usb-mount"-function of retropie is nice, but it only copies all roms and data from and onto the internal drive, so if you have a not enough space on the card left, you have to delete files and that`s not really cool. I decided to make a script which mounts the most important folders from the stick to their desired location on the internal disk, so you can run all your games directly from the usb drive. It renames the original folder to *%_org*, so they can always be reversed if no usb stick is connected...automatically.
 
@@ -36,7 +36,6 @@ I'm using a 64Gb NTFS-formatted drive. For ntfs-support, install the needed depe
 
 # Installation
 
-
 To prevent empty folders after creating the links, a few steps are required\
 (the location of the mounted drive can vary, so check first if the path given by\
 `echo $(mount | grep sd | awk '{print $3}')`\
@@ -62,7 +61,8 @@ Then create the correct file-structure:
 - `sudo cp -R /opt/retropie/configs/all/retroarch/autoconfig $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
 - `sudo cp -R /opt/retropie/configs/all/retroarch/config $(mount | grep media | awk '{print $3}')/retro_pi/retroarch/`
 
-### This steps are combined in `structure.sh`
+# Script "structure.sh"
+This script combines all commands from above. The more files are already present (roms, scraped images, ...), the longer the copy process will take.
 
 Then proceed with
 - download script
