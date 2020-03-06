@@ -24,7 +24,7 @@ RPI_GAMELISTS=${RPI_PATH}/emulationstation/gamelists
 RPI_CFG_INPUT=${RPI_PATH}/emulationstation/es_input.cfg
 RPI_CFG_SETTINGS=${RPI_PATH}/emulationstation/es_settings.cfg
 
-# SECTION MOUNT
+# SECTION Mount
 # ANCHOR retropie home
 if [ -d "${USB_HOME}" ];
 then
@@ -146,7 +146,7 @@ then
 fi
 # !SECTION
 
-# SECTION RESTORE
+# SECTION Restore
 # ANCHOR retropie home
 if [ ! -d "${USB_HOME}" ] && [ -d "${RPI_HOME}_org" ];
 then
@@ -266,4 +266,17 @@ else
         echo "already restored - file \"${RPI_CFG_SYSTEM}\""
     fi
 fi
+# !SECTION
+
+# SECTION Permissions
+sudo chown -R pi:pi ${RPI_EMU_PATH}
+sudo chown -R pi:pi ${RPI_PATH}
+sudo chown -R pi:pi ${RPI_HOME}
+sudo chown -R pi:pi ${RPI_THEMES}
+sudo chown -R pi:pi ${RPI_CFG_SYSTEM}
+sudo chown -R pi:pi ${RPI_CONFIG}
+sudo chown -R pi:pi ${RPI_AUTOCONFIG}
+sudo chown -R pi:pi ${RPI_GAMELISTS}
+sudo chown -R pi:pi ${RPI_CFG_INPUT}
+sudo chown -R pi:pi ${RPI_CFG_SETTINGS}
 # !SECTION
