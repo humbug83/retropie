@@ -49,7 +49,7 @@ I'm using a 64Gb NTFS-formatted drive. For ntfs-support, install the needed depe
 
 > :warning:\
 If there are 2 or more drives connected, the output also shows more locations, so either you disconnect all other drives except the one you want to use to store the files or you change following part in the next commands regarding your needs:
-change `$(mount | grep media | awk '{print $3}')` to e.g `/media/usb0`
+change `$(mount | grep media | awk '{print $3}')` to `/media/usb(x)` (x = number of current or desired drive, if more than one are connected)
 
 #### 2. Create the correct file-structure
 
