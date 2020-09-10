@@ -1,5 +1,5 @@
 # RetroPie
-Personal scripts for e.g. mounting usb-drivers and their stored games  
+Scripts for mounting usb-drives with stored games, splashscreens,settings, etc ...
 
 ---
 
@@ -43,8 +43,7 @@ I'm using a 64Gb NTFS-formatted drive. For ntfs-support, install the needed depe
 #### 1. Check if the drive was mounted correctly
 
 - create a file in the rootdirectory of the drive called "test" (or whatever)
-- plug in the usb-drive and run\
-`ls $(mount | grep media | awk '{print $3}')`
+- plug in the usb-drive and run `ls $(mount | grep media | awk '{print $3}')`
 - if the file is there (in any of the listed usb*-directories), all is fine
 - if not, check if the drive is ok or restart the system. If it's a ntfs-drive, be sure you have installed `ntfs-3g`.
 
